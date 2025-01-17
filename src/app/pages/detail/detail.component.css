@@ -41,6 +41,10 @@
   margin: 40px 0;
 }
 
+.list-item {
+  width: auto;
+}
+
 @media only screen and (max-width: 600px) {
   .content-list {
     flex-direction: column;
@@ -53,5 +57,9 @@
 
   .title-make {
     font-size: 1.4rem;
+  }
+
+  .list-item {
+    width: 70%;
   }
 }

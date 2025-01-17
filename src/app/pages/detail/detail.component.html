@@ -11,7 +11,7 @@
         <mat-card-content class="title">Modelos:</mat-card-content>
         <mat-list class="content" role="list">
           @for (make of makeDetailMakesModels; track make.Model_ID) {
-          <mat-list-item role="listitem">{{ make.Model_Name }}</mat-list-item>
+          <mat-list-item class="list-item" role="listitem">{{ make.Model_Name }}</mat-list-item>
           }
         </mat-list>
       </mat-card>
@@ -23,7 +23,7 @@
         <mat-card-content class="title">Tipos:</mat-card-content>
         <mat-list class="content" role="list">
           @for (make of makeDetailMakeTypes; track make.VehicleTypeId) {
-          <mat-list-item role="listitem">{{
+          <mat-list-item class="list-item" role="listitem">{{
             make.VehicleTypeName
           }}</mat-list-item>
           }
