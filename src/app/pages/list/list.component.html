@@ -1,0 +1,20 @@
+<main class="main">
+  <div class="content">
+    <mat-form-field class="example-full-width">
+      <mat-label>Filtrar por texto:</mat-label>
+      <input
+        matInput
+        placeholder="Introducir texto"
+        [value]="paramSearch$ | async"
+        (keyup)="filterList($event)"
+      />
+    </mat-form-field>
+    <cdk-virtual-scroll-viewport itemSize="50" class="make-viewport">
+      <div *cdkVirtualFor="let make of makes$ | async" class="make-item">
+        <span class="link" (click)="selectedMake(make)">{{
+          make.Make_Name
+        }}</span>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</main>

@@ -1,0 +1,36 @@
+<main class="main">
+  <div class="title-make">
+    @if (make$ | async; as make) { Marca: {{ make }}
+    }
+  </div>
+
+  <div class="content-list">
+    <div class="list">
+      @if (makeDetailMakesModels$ | async; as makeDetailMakesModels) {
+      <mat-card appearance="outlined">
+        <mat-card-content class="title">Modelos:</mat-card-content>
+        <mat-list class="content" role="list">
+          @for (make of makeDetailMakesModels; track make.Model_ID) {
+          <mat-list-item role="listitem">{{ make.Model_Name }}</mat-list-item>
+          }
+        </mat-list>
+      </mat-card>
+      }
+    </div>
+    <div class="list">
+      @if (makeDetailMakesTypes$ | async; as makeDetailMakeTypes) {
+      <mat-card appearance="outlined">
+        <mat-card-content class="title">Tipos:</mat-card-content>
+        <mat-list class="content" role="list">
+          @for (make of makeDetailMakeTypes; track make.VehicleTypeId) {
+          <mat-list-item role="listitem">{{
+            make.VehicleTypeName
+          }}</mat-list-item>
+          }
+        </mat-list>
+      </mat-card>
+      }
+    </div>
+  </div>
+  <a class="link" mat-fab extended (click)="clear()" routerLink="/">Volver</a>
+</main>
